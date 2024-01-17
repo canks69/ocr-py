@@ -1,0 +1,18 @@
+version: '3.7'
+services:
+  ocr:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: ocr
+    ports:
+      - 8000:8000
+    networks:
+      - tunnel
+
+volumes:
+  dbdata:
+    driver: local
+
+networks:
+    tunnel:
